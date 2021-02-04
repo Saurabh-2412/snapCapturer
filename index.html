@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snapCapturer</title>
+    <style>
+        body{
+            border: 10px solid grey;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            align-items: center;
+            background-color: khaki;
+        }
+        button{
+            float: right;
+            display:flex;
+            padding: 10px;
+            margin: 5px;
+            background-color: grey;
+            color: white;
+            font-weight: bolder;
+        }
+        .controls{
+            display: grid;
+            align-items: center;
+            padding: 5px;
+            color: #616161;
+        }
+        .rgb{
+            margin: 10px;
+            text-align: center;
+        }
+        .rgb label{
+            padding: 10px;
+            float: left;
+            color: #616161;
+        }
+        .rgb input{
+            padding: 10px;
+            width: 60vw;
+            color: #616161;
+        }
+        .player{
+            width: 100%;
+            height: 70vh;
+        }
+        .photo{
+            width: 100px;
+            height: 85px;
+            float: right;
+            margin-right: 10px;
+        }
+        img{
+            height: 120px;
+            padding: 10px;
+        }
+        h2{
+            font-style: italic;
+            font-size: x-large;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-bottom: 2px dashed #616161;
+            color: #616161;
+        }
+    </style>
+</head>
+<body>
+    <h2>Capture the snap</h2>
+    <div class="photobooth">
+        <button onclick="takePhoto()">ScreenShot</button>
+        <br><br>
+        <div class="controls">
+            <div class="rgb">
+                <label for="rmin">Red Min:</label>
+                <input type="range" min="0" max="255" name="rmin"><br>
+                <label for="rmin">Red Max:</label>
+                <input type="range" min="0" max="255" name="rmax"><br>
+                <hr>
+                
+                <label for="gmin">Green Min:</label>
+                <input type="range" min="0" max="255" name="gmin"><br>
+                <label for="gmin">Green Max:</label>
+                <input type="range" min="0" max="255" name="gmax"><br>
+                <hr>
+                
+                <label for="bmin">Blue Min:</label>
+                <input type="range" min="0" max="255" name="bmin"><br>
+                <label for="bmin">Blue Max:</label>
+                <input type="range" min="0" max="255" name="bmax"><br>
+                <hr>
+            </div>
+        </div>
+        <canvas class="photo"></canvas>
+        <video class="player"></video>
+        <div class="strip"></div>
+    </div>
+    <audio class="snap" hidden></audio>
+    <script src="index.js"></script>
+</body>
+</html>
